@@ -6,7 +6,7 @@
     <title>Legit Earners Tech</title>
     <meta name="description" content="Join Legit Earners Tech – Earn by posting technology screenshots and get rewarded.">
     <link rel="icon" type="image/png" href="https://www.thecable.ng/wp-content/uploads/2025/01/MTN-NIgeria-768x515.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Reset */
@@ -17,8 +17,9 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #0f172a, #1e293b);
+            font-family: 'Montserrat', sans-serif;
+            background: #0f0c29;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: white;
             line-height: 1.6;
         }
@@ -27,7 +28,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 30px;
         }
 
         /* Header */
@@ -35,25 +36,64 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 25px 0;
+            position: relative;
+            z-index: 100;
         }
 
         header .logo {
-            font-size: 24px;
-            font-weight: 600;
+            font-size:
+            28px;
+            font-weight: 700;
             color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+            margin-right: 12px;
+            box-shadow: 0 0 15px #4f46e5;
+        }
+
+        nav {
+            display: flex;
         }
 
         header nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
         }
 
         header nav a:hover {
             color: #4f46e5;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -61,97 +101,171 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 100px 0;
+            padding: 120px 0 100px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.1), transparent 60%);
+            z-index: 0;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 550px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #fff, #d8d8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
             font-size: 18px;
             color: #ddd;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            font-weight: 400;
         }
 
         .hero-content .cta {
             display: inline-block;
-            padding: 15px 30px;
-            background: #4f46e5;
+            padding: 16px 32px;
+            background: linear-gradient(to right, #4f46e5, #7b69fe);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 16px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
         }
 
         .hero-content .cta:hover {
-            background: #4338ca;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-image img {
-            max-width: 500px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg);
         }
 
         /* Features Section */
         .features {
             display: flex;
             justify-content: space-between;
-            margin: 100px 0;
+            margin: 140px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .feature {
             text-align: center;
             max-width: 300px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .feature i {
-            font-size: 40px;
+            font-size: 48px;
             color: #4f46e5;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
         }
 
         .feature h3 {
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature p {
-            font-size: 14px;
+            font-size: 16px;
             color: #ddd;
+            font-weight: 300;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 100px;
+            position: relative;
         }
 
         footer p {
             font-size: 14px;
-            color: #ddd;
+            color: #aaa;
         }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .features {
+                padding: 0 20px;
+                gap: 20px;
+            }
+            
+            .feature {
+                max-width: 280px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
+                padding: 80px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .hero-image {
+                margin-top: 60px;
             }
 
             .hero-image img {
-                margin-top: 30px;
+                max-width: 100%;
+                transform: none;
             }
 
             .features {
@@ -161,6 +275,7 @@
 
             .feature {
                 margin-bottom: 40px;
+                max-width: 100%;
             }
         }
     </style>
@@ -187,7 +302,6 @@
                 <img src="https://tribuneonlineng.com/wp-content/webp-express/webp-images/uploads/2019/01/Naira-money-360x350.jpg.webp" alt="Earn with Legit Earners Tech">
             </div>
         </section>
-        <script type='text/javascript' src='//slushhelmetmirth.com/7a/ea/37/7aea374aead78bb3565a57a14614b80d.js'></script>
 
         <!-- Features Section -->
         <section class="features">
@@ -213,15 +327,17 @@
             <p>&copy; 2025 Legit Earners Tech. All rights reserved.</p>
         </footer>
     </div>
+    
+    <script type='text/javascript' src='//slushhelmetmirth.com/7a/ea/37/7aea374aead78bb3565a57a14614b80d.js'></script>
     <script type="text/javascript">
-	atOptions = {
-		'key' : 'ab8940c5624ac62eee2fe1482ca92c3c',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//slushhelmetmirth.com/ab8940c5624ac62eee2fe1482ca92c3c/invoke.js"></script>
+        atOptions = {
+            'key' : 'ab8940c5624ac62eee2fe1482ca92c3c',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//slushhelmetmirth.com/ab8940c5624ac62eee2fe1482ca92c3c/invoke.js"></script>
 </body>
 </html>
