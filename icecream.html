@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn how to make delicious homemade ice cream and yogurt with our easy-to-follow recipes and tutorials."
+    />
+    <meta
+      name="keywords"
+      content="ice cream, yogurt, homemade, recipes, dessert, tutorials"
+    />
+    <meta name="author" content="Ahuekwe Precious Maduabuchi" />
+    <meta
+      property="og:title"
+      content="Learn to Make Ice Cream & Yogurt | Frozen Delights"
+    />
+    <meta
+      property="og:description"
+      content="Discover the art of making homemade ice cream and yogurt with our step-by-step guides and recipes."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.britannica.com/50/80550-050-5D392AC7/Scoops-kinds-ice-cream.jpg"
+    />
+    <meta property="og:url" content="https://moniebase.onrender.com" />
+    <meta property="og:type" content="app" />
+    <title>Learn to Make Ice Cream & Yogurt | Frozen Delights</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #ff85a2;
+        --secondary-color: #7bd1ba;
+        --accent-color: #ffd639;
+        --text-color: #333;
+        --light-color: #fff;
+        --dark-color: #222;
+        --font-main: "Poppins", sans-serif;
+        --font-heading: "Montserrat", sans-serif;
+      }
+
+      body {
+        font-family: var(--font-main);
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f9f9f9;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--primary-color);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: var(--light-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary-color);
+      }
+
+      .logo span {
+        color: var(--secondary-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: var(--text-color);
+        font-weight: 600;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #ffe8f0 0%, #e0f5f0 100%);
+        padding: 180px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-text {
+        flex: 1;
+        padding-right: 50px;
+      }
+
+      .hero-text h1 {
+        margin-bottom: 20px;
+        color: var(--dark-color);
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #555;
+      }
+
+      .hero-image {
+        flex: 1;
+        position: relative;
+      }
+
+      .hero-image img {
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-shape {
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      /* Features Section */
+      .features {
+        background-color: var(--light-color);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        color: var(--dark-color);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .features-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-box {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff0f5;
+        border-radius: 50%;
+        color: var(--primary-color);
+        font-size: 2rem;
+      }
+
+      .feature-box h3 {
+        margin-bottom: 15px;
+        color: var(--dark-color);
+      }
+
+      /* Recipes Section */
+      .recipes {
+        background-color: #f9f9f9;
+      }
+
+      .recipes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .recipe-card {
+        background-color: var(--light-color);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .recipe-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .recipe-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .recipe-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .recipe-card:hover .recipe-image img {
+        transform: scale(1.1);
+      }
+
+      .recipe-content {
+        padding: 25px;
+      }
+
+      .recipe-content h3 {
+        margin-bottom: 10px;
+      }
+
+      .recipe-content p {
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .recipe-meta {
+        display: flex;
+        justify-content: space-between;
+        color: #888;
+        font-size: 0.9rem;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        background-color: var(--light-color);
+      }
+
+      .testimonials-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .testimonial-slide {
+        text-align: center;
+        padding: 20px;
+        display: none;
+      }
+
+      .testimonial-slide.active {
+        display: block;
+      }
+
+      .testimonial-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        border: 5px solid var(--secondary-color);
+      }
+
+      .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-text {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      .testimonial-role {
+        color: #888;
+        font-size: 0.9rem;
+      }
+
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-dot.active {
+        background-color: var(--primary-color);
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        background: linear-gradient(135deg, #ffe8f0 0%, #e0f5f0 100%);
+        text-align: center;
+      }
+
+      .newsletter-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form {
+        display: flex;
+        margin-top: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+        overflow: hidden;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 15px 25px;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .newsletter-btn {
+        padding: 15px 30px;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .newsletter-btn:hover {
+        background-color: var(--secondary-color);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: #aaa;
+        padding: 60px 0 20px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--light-color);
+        margin-bottom: 20px;
+      }
+
+      .footer-logo span {
+        color: var(--primary-color);
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .footer-title {
+        color: var(--light-color);
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links ul li a {
+        color: #aaa;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--primary-color);
+        padding-left: 5px;
+      }
+
+      .footer-contact p {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--primary-color);
+      }
+
+      .footer-social {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-color);
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 992px) {
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+        }
+
+        .hero-content {
+          flex-direction: column;
+        }
+
+        .hero-text {
+          padding-right: 0;
+          margin-bottom: 50px;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 80px);
+          background-color: var(--light-color);
+          transition: all 0.4s ease;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          padding: 30px;
+        }
+
+        nav ul li {
+          margin: 0 0 20px 0;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+          border-radius: 15px;
+        }
+
+        .newsletter-input {
+          padding: 15px;
+          border-radius: 15px 15px 0 0;
+        }
+
+        .newsletter-btn {
+          border-radius: 0 0 15px 15px;
+          padding: 15px;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        section {
+          padding: 60px 0;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .btn {
+          padding: 10px 25px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">Frozen<span>Delights</span></a>
+        <div class="mobile-menu" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Benefits</a></li>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li>
+              <a
+                href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                class="btn"
+                >Get Started</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Master the Art of Homemade Ice Cream & Yogurt</h1>
+          <p>
+            Learn to create delicious frozen treats in your own kitchen with our
+            step-by-step guides, expert tips, and mouthwatering recipes.
+          </p>
+          <a href="#recipes" class="btn">Explore Recipes</a>
+          <a
+            href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+            class="btn btn-secondary"
+            >Watch Tutorials</a
+          >
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+            alt="Homemade Ice Cream"
+          />
+          <div class="hero-shape"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Make Your Own?</h2>
+          <p>
+            Discover the benefits of creating your own frozen treats at home
+          </p>
+        </div>
+        <div class="features-container">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Healthier Options</h3>
+            <p>
+              Control the ingredients and create treats with less sugar, no
+              preservatives, and organic components.
+            </p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Endless Creativity</h3>
+            <p>
+              Experiment with unique flavor combinations and create custom
+              desserts tailored to your taste.
+            </p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3>Cost Effective</h3>
+            <p>
+              Save money by making premium quality frozen treats at a fraction
+              of store-bought prices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section class="recipes" id="recipes">
+      <div class="container">
+        <div class="section-title">
+          <h2>Popular Recipes</h2>
+          <p>Try our most loved ice cream and yogurt recipes</p>
+        </div>
+        <div class="recipes-container">
+          <div class="recipe-card">
+            <div class="recipe-image">
+              <img
+                src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                alt="Vanilla Bean Ice Cream"
+              />
+            </div>
+            <div class="recipe-content">
+              <h3>Classic Vanilla Bean</h3>
+              <p>
+                A rich and creamy vanilla ice cream with real vanilla bean
+                specks. The perfect base for any topping.
+              </p>
+              <div class="recipe-meta">
+                <span><i class="far fa-clock"></i> 30 minutes</span>
+                <span><i class="fas fa-star"></i> 4.9/5</span>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-card">
+            <div class="recipe-image">
+              <img
+                src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                alt="Strawberry Yogurt"
+              />
+            </div>
+            <div class="recipe-content">
+              <h3>Greek Yogurt with Berries</h3>
+              <p>
+                Creamy homemade Greek yogurt topped with fresh berries and a
+                drizzle of honey.
+              </p>
+              <div class="recipe-meta">
+                <span><i class="far fa-clock"></i> 8 hours</span>
+                <span><i class="fas fa-star"></i> 4.7/5</span>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-card">
+            <div class="recipe-image">
+              <img
+                src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate Ice Cream"
+              />
+            </div>
+            <div class="recipe-content">
+              <h3>Double Chocolate Fudge</h3>
+              <p>
+                Decadent chocolate ice cream with chunks of fudge and chocolate
+                chips throughout.
+              </p>
+              <div class="recipe-meta">
+                <span><i class="far fa-clock"></i> 45 minutes</span>
+                <span><i class="fas fa-star"></i> 5.0/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Students Say</h2>
+          <p>Hear from people who've mastered homemade frozen treats</p>
+        </div>
+        <div class="testimonials-container">
+          <div class="testimonial-slide active">
+            <div class="testimonial-image">
+              <img
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Sarah Johnson"
+              />
+            </div>
+            <p class="testimonial-text">
+              "I never thought making ice cream at home could be so easy and
+              delicious! The step-by-step guides made it foolproof, and now my
+              family requests my homemade vanilla bean ice cream every weekend."
+            </p>
+            <h4 class="testimonial-author">Sarah Johnson</h4>
+            <p class="testimonial-role">Home Cook</p>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-image">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Michael Chen"
+              />
+            </div>
+            <p class="testimonial-text">
+              "As someone with dietary restrictions, being able to make my own
+              yogurt has been life-changing. I can control exactly what goes in,
+              and the results are better than anything I've bought at the
+              store."
+            </p>
+            <h4 class="testimonial-author">Michael Chen</h4>
+            <p class="testimonial-role">Fitness Enthusiast</p>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-image">
+              <img
+                src="https://randomuser.me/api/portraits/women/42.jpg"
+                alt="Emma Rodriguez"
+              />
+            </div>
+            <p class="testimonial-text">
+              "The creative recipes have inspired me to experiment with flavors
+              I never would have considered. My lavender honey ice cream was a
+              hit at our last dinner party, and everyone asked for the recipe!"
+            </p>
+            <h4 class="testimonial-author">Emma Rodriguez</h4>
+            <p class="testimonial-role">Food Blogger</p>
+          </div>
+          <div class="testimonial-controls">
+            <div class="testimonial-dot active" data-slide="0"></div>
+            <div class="testimonial-dot" data-slide="1"></div>
+            <div class="testimonial-dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container newsletter-container">
+        <div class="section-title">
+          <h2>Join Our Ice Cream Community</h2>
+          <p>
+            Subscribe to receive new recipes, tips, and exclusive content
+            directly to your inbox
+          </p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3 class="footer-logo">Frozen<span>Delights</span></h3>
+            <p>
+              We're passionate about helping people create delicious homemade
+              frozen treats. Join us on this sweet journey!
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://slushhelmetmirth.com/ticqzd38?key=ac7e9a9ae5c78ea398c0ed496e49a3e5"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://slushhelmetmirth.com/ticqzd38?key=ac7e9a9ae5c78ea398c0ed496e49a3e5"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://slushhelmetmirth.com/ticqzd38?key=ac7e9a9ae5c78ea398c0ed496e49a3e5"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
+              <a
+                href="https://slushhelmetmirth.com/ticqzd38?key=ac7e9a9ae5c78ea398c0ed496e49a3e5"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Benefits</a></li>
+              <li><a href="#recipes">Recipes</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3 class="footer-title">Resources</h3>
+            <ul>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >Ice Cream Basics</a
+                >
+              </li>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >Yogurt Making Guide</a
+                >
+              </li>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >Equipment Reviews</a
+                >
+              </li>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >Ingredient Guide</a
+                >
+              </li>
+              <li>
+                <a href="https://chat.whatsapp.com/EkxsvSaK66P2wUUbVHUkkW"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Owerri Municipal, Imo State
+            </p>
+            <p><i class="fas fa-phone"></i> 08128885606</p>
+            <p><i class="fas fa-envelope"></i> shoppifyinc.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Frozen Delights. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenu = document.getElementById('mobile-menu');
+      const nav = document.getElementById('nav');
+
+      mobileMenu.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          mobileMenu.querySelector('i').classList  () => {
+          nav.classList.toggle('active');
+          mobileMenu.querySelector('i').classList.toggle('fa-bars');
+          mobileMenu.querySelector('i').classList.toggle('fa-times');
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+
+              const targetId = this.getAttribute('href');
+              if (targetId === '#') return;
+
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                  window.scrollTo({
+                      top: targetElement.offsetTop - 80,
+                      behavior: 'smooth'
+                  });
+
+                  // Close mobile menu if open
+                  if (nav.classList.contains('active')) {
+                      nav.classList.remove('active');
+                      mobileMenu.querySelector('i').classList.toggle('fa-bars');
+                      mobileMenu.querySelector('i').classList.toggle('fa-times');
+                  }
+              }
+          });
+      });
+
+      // Testimonial Slider
+      const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+      testimonialDots.forEach(dot => {
+          dot.addEventListener('click', () => {
+              const slideIndex = dot.getAttribute('data-slide');
+
+              // Hide all slides
+              testimonialSlides.forEach(slide => {
+                  slide.classList.remove('active');
+              });
+
+              // Remove active class from all dots
+              testimonialDots.forEach(dot => {
+                  dot.classList.remove('active');
+              });
+
+              // Show selected slide and activate dot
+              testimonialSlides[slideIndex].classList.add('active');
+              dot.classList.add('active');
+          });
+      });
+
+      // Auto rotate testimonials
+      let currentSlide = 0;
+      const autoSlide = () => {
+          currentSlide = (currentSlide + 1) % testimonialSlides.length;
+
+          // Hide all slides
+          testimonialSlides.forEach(slide => {
+              slide.classList.remove('active');
+          });
+
+          // Remove active class from all dots
+          testimonialDots.forEach(dot => {
+              dot.classList.remove('active');
+          });
+
+          // Show current slide and activate dot
+          testimonialSlides[currentSlide].classList.add('active');
+          testimonialDots[currentSlide].classList.add('active');
+      };
+
+      // Change testimonial every 5 seconds
+      setInterval(autoSlide, 5000);
+
+      // Newsletter Form Submission
+      const newsletterForm = document.getElementById('newsletter-form');
+
+      newsletterForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = newsletterForm.querySelector('input').value;
+
+          // Here you would typically send the email to your server
+          // For demo purposes, we'll just show an alert
+          alert(`Thank you for subscribing with ${email}! You'll receive our next recipe soon.`);
+
+          // Reset the form
+          newsletterForm.reset();
+      });
+
+      // Scroll Animation
+      window.addEventListener('scroll', () => {
+          const header = document.querySelector('header');
+
+          if (window.scrollY > 50) {
+              header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+              header.style.background = '#ffffff';
+          } else {
+              header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+              header.style.background = '#ffffff';
+          }
+      });
+    </script>
+    <script
+      type="text/javascript"
+      src="//slushhelmetmirth.com/39/2a/0d/392a0d28346a0e19cd71e87eccfdecf0.js"
+    ></script>
+  </body>
+</html>
