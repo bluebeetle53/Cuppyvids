@@ -1,221 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEGIT EARNERS TECH </title>
-      <meta name="description" content="Join Legit Earners Tech – Earn by posting technology screenshots and get rewarded.">
-    <link rel="icon" type="image/png" href="https://www.thecable.ng/wp-content/uploads/2025/01/MTN-NIgeria-768x515.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEGIT EARNERS TECH</title>
+    <meta
+      name="description"
+      content="Join Legit Earners Tech – Earn by posting technology screenshots and get rewarded."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* Fonts and Reset */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #0f172a, #1e293b);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+      :root {
+        --primary: #4361ee;
+        --primary-dark: #3a56d4;
+        --secondary: #3f37c9;
+        --accent: #4895ef;
+        --danger: #f72585;
+        --success: #4cc9f0;
+        --dark: #1a1a2e;
+        --light: #f8f9fa;
+        --gray: #6c757d;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
 
-/* Container */
-.container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
-    width: 350px;
-    text-align: center;
-    color: white;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-/* Form Box */
-.form-box h2 {
-    font-size: 22px;
-    margin-bottom: 5px;
-}
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f5f7ff;
+        color: var(--dark);
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
 
-.form-box p {
-    font-size: 14px;
-    color: #ddd;
-}
+      .container {
+        width: 100%;
+        max-width: 420px;
+      }
 
-/* Input Group */
-.input-group {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
+      .card {
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
 
-.input-group i {
-    margin-right: 10px;
-    color: white;
-}
+      .card-header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 25px;
+        text-align: center;
+      }
 
-input {
-    border: none;
-    background: transparent;
-    color: white;
-    width: 100%;
-    font-size: 14px;
-    outline: none;
-}
+      .card-header h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
 
-/* Buttons */
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
+      .card-header p {
+        font-size: 14px;
+        opacity: 0.9;
+      }
 
-button:hover {
-    opacity: 0.8;
-}
+      .card-body {
+        padding: 25px;
+      }
 
-.secondary-btn {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-}
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
 
-/* Toast Message */
-.toast {
-    display: none;
-    background: #e63946;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--dark);
+      }
 
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
+      .input-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
 
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    color: black;
-}
+      .input-group .icon {
+        position: absolute;
+        left: 15px;
+        color: var(--gray);
+        font-size: 16px;
+      }
 
-.close {
-    float: right;
-    cursor: pointer;
-}
+      .form-control {
+        width: 100%;
+        padding: 12px 15px 12px 45px;
+        border: 1px solid #e0e0e0;
+        border-radius: var(--border-radius);
+        font-size: 14px;
+        transition: var(--transition);
+        background-color: #f8f9fa;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        background-color: white;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        transition: var(--transition);
+        width: 100%;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        margin-top: 10px;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(67, 97, 238, 0.1);
+      }
+
+      .toast {
+        display: none;
+        padding: 12px;
+        border-radius: var(--border-radius);
+        margin-bottom: 20px;
+        font-size: 14px;
+        background-color: rgba(247, 37, 133, 0.1);
+        color: var(--danger);
+        border-left: 4px solid var(--danger);
+      }
+
+      .toast.show {
+        display: block;
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.show {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: var(--border-radius);
+        width: 100%;
+        max-width: 400px;
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+      }
+
+      .modal.show .modal-content {
+        transform: translateY(0);
+      }
+
+      .modal-header {
+        padding: 20px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        position: relative;
+      }
+
+      .modal-header h3 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
+
+      .payment-info {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+
+      .payment-info p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .payment-info strong {
+        color: var(--dark);
+      }
+
+      .copy-btn {
+        margin-left: 8px;
+        color: var(--primary);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .copy-btn:hover {
+        color: var(--primary-dark);
+      }
+
+      .upload-section {
+        display: none;
+        margin-top: 20px;
+      }
+
+      .upload-section.show {
+        display: block;
+      }
+
+      .file-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px dashed #e0e0e0;
+        border-radius: var(--border-radius);
+        margin-bottom: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .file-input:hover {
+        border-color: var(--primary);
+        background-color: rgba(67, 97, 238, 0.05);
+      }
+
+      .status-message {
+        padding: 12px;
+        border-radius: var(--border-radius);
+        background-color: #fff8e6;
+        color: #ff9800;
+        font-size: 14px;
+        margin-top: 15px;
+        text-align: center;
+      }
+
+      .status-message strong {
+        color: #ff9800;
+      }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<script type='text/javascript' src='//slushhelmetmirth.com/39/2a/0d/392a0d28346a0e19cd71e87eccfdecf0.js'></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="form-box">
-            <h2>Join Legit Earners Tech</h2>
-            <p>Earn by posting technology screenshots</p>
-            <form id="registrationForm">
-                <div class="input-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-phone"></i>
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-key"></i>
-                    <input type="text" id="ltcCode" placeholder="Enter LTC Code" required>
-                </div>
-                <button type="submit">Register</button>
-                <p id="error-message" class="toast">❌ Incorrect LTC Code</p>
-                <button type="button" id="getLtcBtn" class="secondary-btn">Get LTC Code</button>
-            </form>
+      <div class="card">
+        <div class="card-header">
+          <h2>Join Legit Earners Tech</h2>
+          <p>Earn by posting technology screenshots</p>
         </div>
+        <div class="card-body">
+          <div id="error-message" class="toast">
+            <i class="fas fa-exclamation-circle"></i> Incorrect LTC Code
+          </div>
+          
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <div class="input-group">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <div class="input-group">
+                <i class="fas fa-phone icon"></i>
+                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" id="password" class="form-control" placeholder="Create a password" required />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="ltcCode">LTC Code</label>
+              <div class="input-group">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="ltcCode" class="form-control" placeholder="Enter your LTC code" required />
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Register Now</button>
+            <button type="button" id="getLtcBtn" class="btn btn-secondary">
+              <i class="fas fa-qrcode"></i> Get LTC Code
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
 
+    <!-- LTC Code Modal -->
     <div id="ltcDialog" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Get Your LTC Code</h3>
-            <p>Make a payment of <strong>₦250</strong> to:</p>
-            <p>Account Number: <strong>8918814764</strong> <i class="fas fa-copy" id="copyAccount"></i></p>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Get Your LTC Code</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="payment-info">
+            <p>Make a payment of <strong>₦500</strong> to:</p>
+            <p>
+              Account Number: <strong>8918814764</strong>
+              <i class="fas fa-copy copy-btn" id="copyAccount"></i>
+            </p>
             <p>Account Name: <strong>Prince NDOKWU</strong></p>
             <p>Bank: <strong>Nombank MFB</strong></p>
-            <label>Enter your phone number:</label>
-            
-            <input type="tel" id="paymentPhone" placeholder="Phone Number">
-            
-            <button id="proceedBtn">Proceed</button>
-
-            <div id="uploadSection">
-                <p>Upload Receipt:</p>
-                <input type="file" id="receiptUpload">
-                <button id="confirmBtn">Confirm</button>
-                <p id="statusMsg">Status: <span>Pending</span></p>
+          </div>
+          
+          <div class="form-group">
+            <label for="paymentPhone">Your Phone Number</label>
+            <div class="input-group">
+              <i class="fas fa-phone icon"></i>
+              <input type="tel" id="paymentPhone" class="form-control" placeholder="Enter phone number used for payment" />
             </div>
+          </div>
+          
+          <button id="proceedBtn" class="btn btn-primary">
+            <i class="fas fa-arrow-right"></i> Proceed
+          </button>
+          
+          <div id="uploadSection" class="upload-section">
+            <div class="form-group">
+              <label>Upload Payment Receipt</label>
+              <div class="file-input" onclick="document.getElementById('receiptUpload').click()">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 24px; margin-bottom: 8px; color: var(--primary);"></i>
+                <p>Click to upload receipt</p>
+                <input type="file" id="receiptUpload" style="display: none;" />
+              </div>
+            </div>
+            
+            <button id="confirmBtn" class="btn btn-primary">
+              <i class="fas fa-check"></i> Confirm Payment
+            </button>
+            
+            <div id="statusMsg" class="status-message">
+              Status: <span>Pending verification</span>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-      document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    let ltcCode = document.getElementById("ltcCode").value;
+      // Registration Form Submission
+      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let ltcCode = document.getElementById("ltcCode").value.trim();
+        
+        if (ltcCode !== "LTELONMUSK") {
+          let toast = document.getElementById("error-message");
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+        } else {
+          // Form is valid, proceed with registration
+          window.location.href = "app.tsx";
+        }
+      });
 
-    if (ltcCode !== "LTELONMUSK") {
-        let toast = document.getElementById("error-message");
-        toast.style.display = "block";
-        setTimeout(() => toast.style.display = "none", 3000);
-    } else {
-        window.location.href = "app.tsx";
-    }
-});
+      // Open LTC Dialog
+      document.getElementById("getLtcBtn").addEventListener("click", function () {
+        document.getElementById("ltcDialog").classList.add("show");
+      });
 
-// Open LTC Dialog
-document.getElementById("getLtcBtn").addEventListener("click", function() {
-    document.getElementById("ltcDialog").style.display = "flex";
-});
+      // Close Modal
+      document.querySelector(".close").addEventListener("click", function () {
+        document.getElementById("ltcDialog").classList.remove("show");
+      });
 
-// Close Modal
-document.querySelector(".close").addEventListener("click", function() {
-    document.getElementById("ltcDialog").style.display = "none";
-});
+      // Close modal when clicking outside
+      window.addEventListener("click", function(event) {
+        if (event.target === document.getElementById("ltcDialog")) {
+          document.getElementById("ltcDialog").classList.remove("show");
+        }
+      });
 
-// Copy Account Number
-document.getElementById("copyAccount").addEventListener("click", function() {
-    navigator.clipboard.writeText("8918814764");
-    alert("Copied to clipboard!");
-});
+      // Copy Account Number
+      document.getElementById("copyAccount").addEventListener("click", function () {
+        navigator.clipboard.writeText("8918814764");
+        this.classList.remove("fa-copy");
+        this.classList.add("fa-check");
+        setTimeout(() => {
+          this.classList.remove("fa-check");
+          this.classList.add("fa-copy");
+        }, 2000);
+      });
 
-// Upload Receipt
-document.getElementById("proceedBtn").addEventListener("click", function() {
-    document.getElementById("uploadSection").style.display = "block";
-});
+      // Show upload section when proceed is clicked
+      document.getElementById("proceedBtn").addEventListener("click", function () {
+        document.getElementById("uploadSection").classList.add("show");
+      });
 
-document.getElementById("confirmBtn").addEventListener("click", function() {
-    document.getElementById("statusMsg").innerHTML = "Status: <strong style='color: orange;'>Your Payment Receipt has  detected invalid Reupload a valid receipt from your bank</strong>";
-});
+      // Handle receipt upload confirmation
+      document.getElementById("confirmBtn").addEventListener("click", function () {
+        const statusMsg = document.getElementById("statusMsg");
+        statusMsg.innerHTML = `
+          <i class="fas fa-exclamation-triangle"></i> 
+          Status: <strong>Your payment receipt was invalid. Please reupload a valid receipt from your bank</strong>
+        `;
+        statusMsg.style.backgroundColor = "#ffebee";
+        statusMsg.style.color = "#f44336";
+      });
+
+      // Show file name when selected
+      document.getElementById("receiptUpload").addEventListener("change", function() {
+        if (this.files.length > 0) {
+          const fileName = this.files[0].name;
+          const fileInputDiv = this.parentElement;
+          fileInputDiv.innerHTML = `
+            <i class="fas fa-file-alt" style="font-size: 24px; margin-bottom: 8px; color: var(--primary);"></i>
+            <p>${fileName}</p>
+            <small>Click to change</small>
+          `;
+          fileInputDiv.addEventListener("click", () => document.getElementById("receiptUpload").click());
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
