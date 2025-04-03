@@ -1,343 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legit Earners Tech</title>
-    <meta name="description" content="Join Legit Earners Tech – Earn by posting technology screenshots and get rewarded.">
-    <link rel="icon" type="image/png" href="https://www.thecable.ng/wp-content/uploads/2025/01/MTN-NIgeria-768x515.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta
+      name="description"
+      content="Join Legit Earners Tech – Earn by posting technology screenshots and get rewarded."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.thecable.ng/wp-content/uploads/2025/01/MTN-NIgeria-768x515.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      /* Base Styles */
+      :root {
+        --primary: #4361ee;
+        --secondary: #3f37c9;
+        --accent: #4cc9f0;
+        --dark: #1a1a2e;
+        --light: #f8f9fa;
+        --success: #4bb543;
+        --warning: #f0ad4e;
+        --danger: #d9534f;
+        --gray: #6c757d;
+        --dark-gray: #343a40;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--gray);
+      }
+
+      a {
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-primary {
+        color: var(--primary);
+      }
+
+      .mb-4 {
+        margin-bottom: 2rem;
+      }
+
+      /* Header */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: var(--dark);
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(67, 97, 238, 0.1),
+          rgba(76, 201, 240, 0.1)
+        );
+        padding-top: 150px;
+        padding-bottom: 100px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(76, 201, 240, 0.05) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-image {
+        flex: 1;
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+        transition: transform 0.5s ease;
+      }
+
+      .hero-image:hover img {
+        transform: perspective(1000px) rotateY(0) rotateX(0);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      /* Features Section */
+      .features {
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        bottom: -10px;
+        left: 25%;
+        border-radius: 2px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        color: white;
+        font-size: 30px;
+      }
+
+      /* How It Works Section */
+      .how-it-works {
+        background-color: #f8f9fa;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .step {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .step-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        min-width: 50px;
+      }
+
+      .step-content h3 {
+        margin-bottom: 10px;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--primary), var(--accent));
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background-color: white;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .testimonial-content {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--dark-gray);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      .author-info p {
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        text-align: center;
+        padding: 80px 0;
+      }
+
+      .cta-section h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .cta-buttons .btn {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      .cta-buttons .btn:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        h1 {
+          font-size: 2.5rem;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #0f0c29;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 0;
-            position: relative;
-            z-index: 100;
-        }
-
-        header .logo {
-            font-size:
-            28px;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-        }
-
-        header .logo::before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #4f46e5;
-            margin-right: 12px;
-            box-shadow: 0 0 15px #4f46e5;
-        }
-
-        nav {
-            display: flex;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        header nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #4f46e5;
-            transition: width 0.3s ease;
-        }
-
-        header nav a:hover {
-            color: #4f46e5;
-        }
-
-        header nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 120px 0 100px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.1), transparent 60%);
-            z-index: 0;
+        h2 {
+          font-size: 2rem;
         }
 
         .hero-content {
-            max-width: 550px;
-            position: relative;
-            z-index: 1;
+          flex-direction: column;
         }
 
-        .hero-content h1 {
-            font-size: 52px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            background: linear-gradient(to right, #fff, #d8d8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: #ddd;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .hero-content .cta {
-            display: inline-block;
-            padding: 16px 32px;
-            background: linear-gradient(to right, #4f46e5, #7b69fe);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
-        }
-
-        .hero-content .cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+        .hero-text {
+          order: 1;
+          text-align: center;
         }
 
         .hero-image {
-            position: relative;
-            z-index: 1;
+          order: 2;
         }
 
-        .hero-image img {
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            transform: perspective(1000px) rotateY(-5deg);
+        .hero-buttons {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
         }
 
-        .hero-image:hover img {
-            transform: perspective(1000px) rotateY(0deg);
+        .hero {
+          padding-top: 120px;
         }
 
-        /* Features Section */
-        .features {
-            display: flex;
-            justify-content: space-between;
-            margin: 140px 0;
-            position: relative;
-            z-index: 1;
+        .hero-buttons {
+          flex-direction: column;
+          gap: 15px;
         }
 
-        .feature {
-            text-align: center;
-            max-width: 300px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .btn {
+          width: 100%;
         }
 
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
-        .feature i {
-            font-size: 48px;
-            color: #4f46e5;
-            margin-bottom: 25px;
-            text-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+        .cta-buttons .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 2rem;
         }
 
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            font-weight: 600;
+        h2 {
+          font-size: 1.8rem;
         }
 
-        .feature p {
-            font-size: 16px;
-            color: #ddd;
-            font-weight: 300;
+        section {
+          padding: 60px 0;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 100px;
-            position: relative;
+        .step {
+          flex-direction: column;
+          gap: 15px;
         }
-
-        footer p {
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .features {
-                padding: 0 20px;
-                gap: 20px;
-            }
-            
-            .feature {
-                max-width: 280px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 80px 0;
-            }
-
-            .hero-content h1 {
-                font-size: 40px;
-            }
-
-            .hero-content p {
-                font-size: 16px;
-            }
-
-            .hero-image {
-                margin-top: 60px;
-            }
-
-            .hero-image img {
-                max-width: 100%;
-                transform: none;
-            }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature {
-                margin-bottom: 40px;
-                max-width: 100%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="logo">Legit Earners Tech</div>
-            <nav>
-                <a href="dashboard.html">Get Started</a>
-                <a href="https://t.me/opaygi">Telegram group</a>
-            </nav>
-        </header>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <i class="fas fa-laptop-code"></i>
+            Legit Earners Tech
+          </a>
+          <div class="nav-links">
+            <a href="dashboard.html">Get Started</a>
+            <a href="https://t.me/opaygi">Telegram Group</a>
+            <a href="#">How It Works</a>
+            <a href="#">Testimonials</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Earn by Posting Technology Screenshots</h1>
-                <p>Join Legit Earners Tech and start earning rewards by sharing your tech screenshots. It's simple, fun, and rewarding!</p>
-                <a href="dashboard.html" class="cta">Get Started</a>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Earn by Posting Technology Screenshots</h1>
+            <p>
+              Join Legit Earners Tech and start earning rewards by sharing your
+              tech screenshots. It's simple, fun, and rewarding!
+            </p>
+            <div class="hero-buttons">
+              <a href="dashboard.html" class="btn btn-primary">Get Started</a>
+              <a href="#how-it-works" class="btn btn-outline">Learn More</a>
             </div>
-            <div class="hero-image">
-                <img src="https://tribuneonlineng.com/wp-content/webp-express/webp-images/uploads/2019/01/Naira-money-360x350.jpg.webp" alt="Earn with Legit Earners Tech">
-            </div>
-        </section>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://tribuneonlineng.com/wp-content/webp-express/webp-images/uploads/2019/01/Naira-money-360x350.jpg.webp"
+              alt="Earn with Legit Earners Tech"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <div class="feature">
-                <i class="fas fa-money-bill-wave"></i>
-                <h3>Earn Rewards</h3>
-                <p>Get paid for every screenshot you post. The more you share, the more you earn!</p>
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose Us</h2>
+          <p>
+            Discover what makes Legit Earners Tech the best platform for tech
+            enthusiasts
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-money-bill-wave"></i>
             </div>
-            <div class="feature">
-                <i class="fas fa-share-alt"></i>
-                <h3>Easy Sharing</h3>
-                <p>Share your tech screenshots effortlessly and grow your earnings.</p>
+            <h3>Earn Rewards</h3>
+            <p>
+              Get paid for every screenshot you post. The more you share, the
+              more you earn!
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-share-alt"></i>
             </div>
-            <div class="feature">
-                <i class="fas fa-user-friends"></i>
-                <h3>Join a Community</h3>
-                <p>Connect with other tech enthusiasts and grow together.</p>
+            <h3>Easy Sharing</h3>
+            <p>
+              Share your tech screenshots effortlessly and grow your earnings.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-friends"></i>
             </div>
-        </section>
+            <h3>Join a Community</h3>
+            <p>Connect with other tech enthusiasts and grow together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 Legit Earners Tech. All rights reserved.</p>
-        </footer>
-    </div>
-    
-    <script type='text/javascript' src='//slushhelmetmirth.com/7a/ea/37/7aea374aead78bb3565a57a14614b80d.js'></script>
-    <script type="text/javascript">
-        atOptions = {
-            'key' : 'ab8940c5624ac62eee2fe1482ca92c3c',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-        };
-    </script>
-    <script type="text/javascript" src="//slushhelmetmirth.com/ab8940c5624ac62eee2fe1482ca92c3c/invoke.js"></script>
-</body>
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Start earning in just a few simple steps</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Sign Up</h3>
+              <p>
+                Get LTC code and Create an account in less than a minute. No
+                credit card required.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Post Screenshots</h3>
+              <p>
+                Share screenshots of your tech setups, apps, or interesting
+                finds.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Earn Rewards</h3>
+              <p>
+                Get paid for each approved screenshot. Withdraw your earnings
+                anytime.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Users Say</h2>
+          <p>Hear from our community of tech earners</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "I've been using Legit Earners Tech for 5 days now and it's
+              changed how I engage with technology. I earn while sharing my
+              passion!"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://tse4.mm.bing.net/th?id=OIP.2QwAMeLEfVnQXF_fSEeURQHaHi&rs=1&pid=ImgDetMain"
+                  alt="Sarah J."
+                />
+              </div>
+              <div class="author-info">
+                <h4>Great Ohakwe.</h4>
+                <p>Standard boi</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "As a student, this platform has been a game-changer. I make extra
+              money just by sharing screenshots of my coding projects."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://tse3.mm.bing.net/th?id=OIP.DNvH-VcmVGiq-qc7jGIATAHaEH&rs=1&pid=ImgDetMain"
+                  alt="David Kelechukwu."
+                />
+              </div>
+              <div class="author-info">
+                <h4>David Kelechukwu.</h4>
+                <p>Human Anatomy Student</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "The community is amazing! Not only do I earn, but I've also
+              learned so much from other members' tech setups."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://tse1.explicit.bing.net/th?id=OIP.PC3HCxyGTPnUgHsPlY6ucwHaJQ&rs=1&pid=ImgDetMain"
+                  alt="Amina B."
+                />
+              </div>
+              <div class="author-info">
+                <h4>Amina B.</h4>
+                <p>graphic Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Start Earning?</h2>
+        <p>
+          Join thousands of tech enthusiasts who are already earning by sharing
+          what they love.
+        </p>
+        <div class="cta-buttons">
+          <a href="dashboard.html" class="btn">Get Started Now</a>
+          <a href="https://t.me/opaygi" class="btn btn-outline"
+            >Join Our Telegram</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Legit Earners Tech</h3>
+            <p>Empowering tech enthusiasts to earn by sharing their passion.</p>
+            <div class="social-links">
+              <a
+                href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a
+                href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.effectiveratecpm.com/nt4b0ydj?key=384d4fa8f204ff0dc40e3b6c8b6b290a"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:info@legitearnerstech.com"
+                  >info@legitearnerstech.com</a
+                >
+              </li>
+              <li><a href="tel:+1234567890">+(234) 090-567-890</a></li>
+              <li><a href="https://t.me/opaygi">Telegram Group</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Legit Earners Tech. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="//pl26278839.effectiveratecpm.com/9a/47/e8/9a47e846cf068278f5aaf478c2d1b9ac.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//pl26279561.effectiveratecpm.com/72/2b/51/722b512cc19954e321139ce36a74cbc1.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//pl26278839.effectiveratecpm.com/9a/47/e8/9a47e846cf068278f5aaf478c2d1b9ac.js"
+    ></script>
+    >
+  </body>
 </html>
